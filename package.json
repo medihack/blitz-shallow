@@ -1,0 +1,54 @@
+{
+  "name": "blitz-shallow",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "blitz dev",
+    "build": "blitz build",
+    "start": "blitz start",
+    "studio": "blitz prisma studio",
+    "lint": "eslint --ignore-path .gitignore --ext .js,.ts,.tsx .",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "prisma": {
+    "schema": "db/schema.prisma"
+  },
+  "prettier": {
+    "semi": false,
+    "printWidth": 100
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && pretty-quick --staged",
+      "pre-push": "tsc && npm run lint && npm run test"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "eslint --fix"
+    ]
+  },
+  "dependencies": {
+    "prisma": "~2.17",
+    "@prisma/client": "~2.17",
+    "blitz": "latest",
+    "react": "0.0.0-experimental-3310209d0",
+    "react-dom": "0.0.0-experimental-3310209d0",
+    "react-error-boundary": "3.x",
+    "typescript": "4.x",
+    "zod": "1.x",
+    "react-hook-form": "6.x"
+  },
+  "devDependencies": {
+    "@types/react": "17.x",
+    "@types/preview-email": "2.x",
+    "eslint": "7.x",
+    "husky": "4.x",
+    "lint-staged": "10.x",
+    "prettier": "2.x",
+    "pretty-quick": "3.x",
+    "preview-email": "3.x",
+    "prettier-plugin-prisma": "0.x"
+  },
+  "private": true
+}
