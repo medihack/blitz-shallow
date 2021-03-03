@@ -4,6 +4,8 @@ import { useEffect } from "react"
 export const TestComponent = () => {
   const router = useRouter()
 
+  console.log("in render test component")
+
   useEffect(() => {
     console.log("create test component")
     return () => {
