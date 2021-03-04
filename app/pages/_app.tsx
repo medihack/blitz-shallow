@@ -11,7 +11,7 @@ import { queryCache } from "react-query"
 import LoginForm from "app/auth/components/LoginForm"
 
 export default function App({ Component, pageProps }: AppProps) {
-  const getLayout = Component.getLayout || ((page) => page)
+  // const getLayout = Component.getLayout || ((page) => page)
   const router = useRouter()
 
   return (
@@ -24,7 +24,7 @@ export default function App({ Component, pageProps }: AppProps) {
         queryCache.resetErrorBoundaries()
       }}
     >
-      {getLayout(<Component {...pageProps} />)}
+      <Component {...pageProps} />
     </ErrorBoundary>
   )
 }
